@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+  <defs>
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4CAF50"/>
+      <stop offset="100%" style="stop-color:#2E7D32"/>
+    </linearGradient>
+  </defs>
+  <!-- Mower body -->
+  <rect x="8" y="18" width="34" height="20" rx="6" fill="url(#bodyGrad)"/>
+  <!-- Top sensor dome -->
+  <ellipse cx="25" cy="18" rx="8" ry="4" fill="#37474F"/>
+  <ellipse cx="25" cy="16" rx="4" ry="2" fill="#546E7A"/>
+  <!-- Wheels -->
+  <circle cx="14" cy="38" r="5" fill="#212121"/>
+  <circle cx="14" cy="38" r="3" fill="#424242"/>
+  <circle cx="36" cy="38" r="5" fill="#212121"/>
+  <circle cx="36" cy="38" r="3" fill="#424242"/>
+  <!-- Front indicator -->
+  <rect x="20" y="22" width="10" height="3" rx="1" fill="#81C784"/>
+  <!-- Brand accent -->
+  <rect x="12" y="28" width="26" height="2" rx="1" fill="#A5D6A7" opacity="0.6"/>
+</svg>

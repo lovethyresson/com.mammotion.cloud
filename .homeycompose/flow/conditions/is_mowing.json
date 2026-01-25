@@ -1,0 +1,22 @@
+{
+  "id": "is_mowing",
+  "title": {
+    "en": "Is mowing",
+    "nl": "Is aan het maaien"
+  },
+  "titleFormatted": {
+    "en": "[[device]] !{{is|is not}} mowing",
+    "nl": "[[device]] !{{is|is niet}} aan het maaien"
+  },
+  "hint": {
+    "en": "Check if the mower is currently mowing",
+    "nl": "Controleer of de maaier momenteel aan het maaien is"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=luba|luba-2|yuka"
+    }
+  ]
+}

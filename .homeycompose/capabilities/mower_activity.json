@@ -1,0 +1,11 @@
+{
+  "type": "string",
+  "title": {
+    "en": "Activity",
+    "nl": "Activiteit"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/mower_activity.svg"
+}

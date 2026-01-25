@@ -1,0 +1,22 @@
+{
+  "id": "mowing_finished",
+  "title": {
+    "en": "Mowing finished",
+    "nl": "Maaien voltooid"
+  },
+  "titleFormatted": {
+    "en": "[[device]] finished mowing",
+    "nl": "[[device]] klaar met maaien"
+  },
+  "hint": {
+    "en": "When the mower finishes a mowing session",
+    "nl": "Wanneer de maaier klaar is met maaien"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=luba|luba-2|yuka"
+    }
+  ]
+}

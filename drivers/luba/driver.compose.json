@@ -1,0 +1,139 @@
+{
+  "name": {
+    "en": "Luba AWD",
+    "nl": "Luba AWD"
+  },
+  "class": "other",
+  "capabilities": [
+    "onoff",
+    "measure_battery",
+    "alarm_battery",
+    "mower_state",
+    "mower_activity"
+  ],
+  "energy": {
+    "batteries": ["INTERNAL"]
+  },
+  "platforms": ["local", "cloud"],
+  "connectivity": ["cloud"],
+  "images": {
+    "small": "{{driverAssetsPath}}/images/small.png",
+    "large": "{{driverAssetsPath}}/images/large.png"
+  },
+  "pair": [
+    {
+      "id": "login_credentials",
+      "template": "login_credentials",
+      "options": {
+        "title": {
+          "en": "Connect to Mammotion",
+          "nl": "Verbinden met Mammotion"
+        },
+        "usernameLabel": {
+          "en": "Email",
+          "nl": "E-mail"
+        },
+        "usernamePlaceholder": {
+          "en": "email@example.com",
+          "nl": "email@voorbeeld.nl"
+        },
+        "passwordLabel": {
+          "en": "Password",
+          "nl": "Wachtwoord"
+        },
+        "passwordPlaceholder": {
+          "en": "Enter your password",
+          "nl": "Voer uw wachtwoord in"
+        }
+      }
+    },
+    {
+      "id": "list_devices",
+      "template": "list_devices",
+      "navigation": {
+        "next": "add_devices"
+      }
+    },
+    {
+      "id": "add_devices",
+      "template": "add_devices"
+    }
+  ],
+  "repair": [
+    {
+      "id": "login_credentials",
+      "template": "login_credentials",
+      "options": {
+        "title": {
+          "en": "Reconnect to Mammotion",
+          "nl": "Opnieuw verbinden met Mammotion"
+        },
+        "usernameLabel": {
+          "en": "Email",
+          "nl": "E-mail"
+        },
+        "passwordLabel": {
+          "en": "Password",
+          "nl": "Wachtwoord"
+        }
+      }
+    }
+  ],
+  "settings": [
+    {
+      "type": "group",
+      "label": {
+        "en": "Device Information",
+        "nl": "Apparaat Informatie"
+      },
+      "children": [
+        {
+          "id": "model",
+          "type": "label",
+          "label": {
+            "en": "Model",
+            "nl": "Model"
+          },
+          "value": ""
+        },
+        {
+          "id": "firmware",
+          "type": "label",
+          "label": {
+            "en": "Firmware",
+            "nl": "Firmware"
+          },
+          "value": ""
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "label": {
+        "en": "Polling Settings",
+        "nl": "Polling Instellingen"
+      },
+      "children": [
+        {
+          "id": "pollInterval",
+          "type": "number",
+          "label": {
+            "en": "Poll Interval (seconds)",
+            "nl": "Poll Interval (seconden)"
+          },
+          "hint": {
+            "en": "How often to check the mower status (15-60 seconds)",
+            "nl": "Hoe vaak de maaier status wordt gecontroleerd (15-60 seconden)"
+          },
+          "value": 30,
+          "min": 15,
+          "max": 60,
+          "units": {
+            "en": "seconds",
+            "nl": "seconden"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "battery_low",
+  "title": {
+    "en": "Battery is low",
+    "nl": "Batterij is laag"
+  },
+  "titleFormatted": {
+    "en": "[[device]] battery is low",
+    "nl": "[[device]] batterij is laag"
+  },
+  "hint": {
+    "en": "When the mower battery drops below 20%",
+    "nl": "Wanneer de batterij van de maaier onder 20% daalt"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=luba|luba-2|yuka"
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "triggers": {
+    "mowing_started": {
+      "title": "Maaien gestart",
+      "hint": "Wanneer de maaier begint met maaien"
+    },
+    "mowing_finished": {
+      "title": "Maaien voltooid",
+      "hint": "Wanneer de maaier klaar is met maaien"
+    },
+    "mower_docked": {
+      "title": "Maaier gedockt",
+      "hint": "Wanneer de maaier terugkeert naar het dock"
+    },
+    "mower_error": {
+      "title": "Maaier fout",
+      "hint": "Wanneer de maaier een fout meldt"
+    },
+    "battery_low": {
+      "title": "Batterij is laag",
+      "hint": "Wanneer de batterij van de maaier onder 20% daalt"
+    }
+  },
+  "actions": {
+    "start_mowing": {
+      "title": "Start maaien",
+      "hint": "Start een maaisessie"
+    },
+    "pause_mowing": {
+      "title": "Pauzeer maaien",
+      "hint": "Pauzeer de huidige maaisessie"
+    },
+    "return_to_dock": {
+      "title": "Terug naar dock",
+      "hint": "Stuur de maaier terug naar het oplaaddock"
+    }
+  },
+  "conditions": {
+    "is_mowing": {
+      "title": "Is aan het maaien",
+      "hint": "Controleer of de maaier momenteel aan het maaien is"
+    },
+    "is_docked": {
+      "title": "Is gedockt",
+      "hint": "Controleer of de maaier bij het dock is"
+    },
+    "battery_above": {
+      "title": "Batterij is boven",
+      "hint": "Controleer of het batterijniveau boven de drempel is"
+    }
+  }
+}

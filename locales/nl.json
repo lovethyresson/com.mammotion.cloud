@@ -1,0 +1,95 @@
+{
+  "pair": {
+    "login": {
+      "title": "Verbinden met Mammotion",
+      "error": "Inloggen mislukt. Controleer uw inloggegevens."
+    },
+    "list_devices": {
+      "title": "Selecteer uw maaier"
+    },
+    "warning": {
+      "title": "Belangrijk: Dubbel Account Vereist",
+      "message": "Mammotion Cloud staat slechts één actieve sessie per account toe. Om deze app te gebruiken moet u:\n\n1. Een secundair Mammotion-account maken\n2. Uw maaier delen met dit secundaire account vanuit de hoofdapp\n3. De inloggegevens van het secundaire account hier gebruiken\n\nBewaar uw primaire account voor de mobiele app."
+    }
+  },
+  "device": {
+    "no_credentials": "Geen inloggegevens opgeslagen. Koppel het apparaat opnieuw.",
+    "auth_failed": "Authenticatie mislukt. Repareer het apparaat.",
+    "not_connected": "Niet verbonden met Mammotion Cloud."
+  },
+  "state": {
+    "idle": "Inactief",
+    "mowing": "Aan het maaien",
+    "charging": "Aan het opladen",
+    "returning": "Terugkeren naar dock",
+    "paused": "Gepauzeerd",
+    "error": "Fout",
+    "offline": "Offline"
+  },
+  "settings": {
+    "title": "Mammotion Instellingen",
+    "polling": {
+      "title": "Polling Instellingen",
+      "interval": "Poll Interval",
+      "intervalHint": "Hoe vaak de maaier status wordt gecontroleerd (in seconden)"
+    },
+    "connection": {
+      "title": "Verbindingsstatus",
+      "connected": "Verbonden",
+      "disconnected": "Niet verbonden"
+    },
+    "devices": {
+      "title": "Gekoppelde Apparaten"
+    }
+  },
+  "triggers": {
+    "mowing_started": {
+      "title": "Maaien gestart",
+      "hint": "Wanneer de maaier begint met maaien"
+    },
+    "mowing_finished": {
+      "title": "Maaien voltooid",
+      "hint": "Wanneer de maaier klaar is met maaien"
+    },
+    "mower_docked": {
+      "title": "Maaier gedockt",
+      "hint": "Wanneer de maaier terugkeert naar het dock"
+    },
+    "mower_error": {
+      "title": "Maaier fout",
+      "hint": "Wanneer de maaier een fout meldt"
+    },
+    "battery_low": {
+      "title": "Batterij is laag",
+      "hint": "Wanneer de batterij van de maaier onder 20% daalt"
+    }
+  },
+  "actions": {
+    "start_mowing": {
+      "title": "Start maaien",
+      "hint": "Start een maaisessie"
+    },
+    "pause_mowing": {
+      "title": "Pauzeer maaien",
+      "hint": "Pauzeer de huidige maaisessie"
+    },
+    "return_to_dock": {
+      "title": "Terug naar dock",
+      "hint": "Stuur de maaier terug naar het oplaaddock"
+    }
+  },
+  "conditions": {
+    "is_mowing": {
+      "title": "Is aan het maaien",
+      "hint": "Controleer of de maaier momenteel aan het maaien is"
+    },
+    "is_docked": {
+      "title": "Is gedockt",
+      "hint": "Controleer of de maaier bij het dock is"
+    },
+    "battery_above": {
+      "title": "Batterij is boven",
+      "hint": "Controleer of het batterijniveau boven de drempel is"
+    }
+  }
+}

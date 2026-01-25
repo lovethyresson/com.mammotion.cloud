@@ -1,0 +1,812 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "com.mammotion.cloud",
+  "version": "1.0.0",
+  "compatibility": ">=5.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "name": {
+    "en": "Mammotion",
+    "nl": "Mammotion"
+  },
+  "description": {
+    "en": "Control your Mammotion robot lawn mowers (Luba, Luba 2, Yuka) via the Mammotion Cloud.",
+    "nl": "Bedien uw Mammotion robotmaaiers (Luba, Luba 2, Yuka) via de Mammotion Cloud."
+  },
+  "category": [
+    "appliances"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Love Thyresson",
+    "email": "love@thyresson.se"
+  },
+  "brandColor": "#4CAF50",
+  "flow": {
+    "triggers": [
+      {
+        "id": "battery_low",
+        "title": {
+          "en": "Battery is low",
+          "nl": "Batterij is laag"
+        },
+        "titleFormatted": {
+          "en": "[[device]] battery is low",
+          "nl": "[[device]] batterij is laag"
+        },
+        "hint": {
+          "en": "When the mower battery drops below 20%",
+          "nl": "Wanneer de batterij van de maaier onder 20% daalt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=luba|luba-2|yuka"
+          }
+        ]
+      },
+      {
+        "id": "mower_docked",
+        "title": {
+          "en": "Mower docked",
+          "nl": "Maaier gedockt"
+        },
+        "titleFormatted": {
+          "en": "[[device]] docked",
+          "nl": "[[device]] gedockt"
+        },
+        "hint": {
+          "en": "When the mower returns to the dock",
+          "nl": "Wanneer de maaier terugkeert naar het dock"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=luba|luba-2|yuka"
+          }
+        ]
+      },
+      {
+        "id": "mower_error",
+        "title": {
+          "en": "Mower error",
+          "nl": "Maaier fout"
+        },
+        "titleFormatted": {
+          "en": "[[device]] has an error",
+          "nl": "[[device]] heeft een fout"
+        },
+        "hint": {
+          "en": "When the mower reports an error",
+          "nl": "Wanneer de maaier een fout meldt"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=luba|luba-2|yuka"
+          }
+        ]
+      },
+      {
+        "id": "mowing_finished",
+        "title": {
+          "en": "Mowing finished",
+          "nl": "Maaien voltooid"
+        },
+        "titleFormatted": {
+          "en": "[[device]] finished mowing",
+          "nl": "[[device]] klaar met maaien"
+        },
+        "hint": {
+          "en": "When the mower finishes a mowing session",
+          "nl": "Wanneer de maaier klaar is met maaien"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=luba|luba-2|yuka"
+          }
+        ]
+      },
+      {
+        "id": "mowing_started",
+        "title": {
+          "en": "Mowing started",
+          "nl": "Maaien gestart"
+        },
+        "titleFormatted": {
+          "en": "[[device]] started mowing",
+          "nl": "[[device]] begon met maaien"
+        },
+        "hint": {
+          "en": "When the mower starts a mowing session",
+          "nl": "Wanneer de maaier begint met maaien"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=luba|luba-2|yuka"
+          }
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "id": "battery_above",
+        "title": {
+          "en": "Battery is above",
+          "nl": "Batterij is boven"
+        },
+        "titleFormatted": {
+          "en": "Battery !{{is|is not}} above [[percentage]] percent",
+          "nl": "Batterij !{{is|is niet}} boven [[percentage]] procent"
+        },
+        "hint": {
+          "en": "Check if battery level is above threshold",
+          "nl": "Controleer of het batterijniveau boven de drempel is"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=luba|luba-2|yuka"
+          },
+          {
+            "type": "number",
+            "name": "percentage",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "placeholder": {
+              "en": "50",
+              "nl": "50"
+            }
+          }
+        ]
+      },
+      {
+        "id": "is_docked",
+        "title": {
+          "en": "Is docked",
+          "nl": "Is gedockt"
+        },
+        "titleFormatted": {
+          "en": "[[device]] !{{is|is not}} docked",
+          "nl": "[[device]] !{{is|is niet}} gedockt"
+        },
+        "hint": {
+          "en": "Check if the mower is at the dock",
+          "nl": "Controleer of de maaier bij het dock is"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=luba|luba-2|yuka"
+          }
+        ]
+      },
+      {
+        "id": "is_mowing",
+        "title": {
+          "en": "Is mowing",
+          "nl": "Is aan het maaien"
+        },
+        "titleFormatted": {
+          "en": "[[device]] !{{is|is not}} mowing",
+          "nl": "[[device]] !{{is|is niet}} aan het maaien"
+        },
+        "hint": {
+          "en": "Check if the mower is currently mowing",
+          "nl": "Controleer of de maaier momenteel aan het maaien is"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=luba|luba-2|yuka"
+          }
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "pause_mowing",
+        "title": {
+          "en": "Pause mowing",
+          "nl": "Pauzeer maaien"
+        },
+        "titleFormatted": {
+          "en": "Pause [[device]]",
+          "nl": "Pauzeer [[device]]"
+        },
+        "hint": {
+          "en": "Pause the current mowing session",
+          "nl": "Pauzeer de huidige maaisessie"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=luba|luba-2|yuka"
+          }
+        ]
+      },
+      {
+        "id": "return_to_dock",
+        "title": {
+          "en": "Return to dock",
+          "nl": "Terug naar dock"
+        },
+        "titleFormatted": {
+          "en": "Send [[device]] back to dock",
+          "nl": "Stuur [[device]] terug naar dock"
+        },
+        "hint": {
+          "en": "Send the mower back to the charging dock",
+          "nl": "Stuur de maaier terug naar het oplaaddock"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=luba|luba-2|yuka"
+          }
+        ]
+      },
+      {
+        "id": "start_mowing",
+        "title": {
+          "en": "Start mowing",
+          "nl": "Start maaien"
+        },
+        "titleFormatted": {
+          "en": "Start mowing with [[device]]",
+          "nl": "Start maaien met [[device]]"
+        },
+        "hint": {
+          "en": "Start a mowing session",
+          "nl": "Start een maaisessie"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=luba|luba-2|yuka"
+          }
+        ]
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "Luba AWD",
+        "nl": "Luba AWD"
+      },
+      "class": "other",
+      "capabilities": [
+        "onoff",
+        "measure_battery",
+        "alarm_battery",
+        "mower_state",
+        "mower_activity"
+      ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      },
+      "platforms": [
+        "local",
+        "cloud"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
+      "images": {
+        "small": "/drivers/luba/assets/images/small.png",
+        "large": "/drivers/luba/assets/images/large.png"
+      },
+      "pair": [
+        {
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "title": {
+              "en": "Connect to Mammotion",
+              "nl": "Verbinden met Mammotion"
+            },
+            "usernameLabel": {
+              "en": "Email",
+              "nl": "E-mail"
+            },
+            "usernamePlaceholder": {
+              "en": "email@example.com",
+              "nl": "email@voorbeeld.nl"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            },
+            "passwordPlaceholder": {
+              "en": "Enter your password",
+              "nl": "Voer uw wachtwoord in"
+            }
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "title": {
+              "en": "Reconnect to Mammotion",
+              "nl": "Opnieuw verbinden met Mammotion"
+            },
+            "usernameLabel": {
+              "en": "Email",
+              "nl": "E-mail"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            }
+          }
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Device Information",
+            "nl": "Apparaat Informatie"
+          },
+          "children": [
+            {
+              "id": "model",
+              "type": "label",
+              "label": {
+                "en": "Model",
+                "nl": "Model"
+              },
+              "value": ""
+            },
+            {
+              "id": "firmware",
+              "type": "label",
+              "label": {
+                "en": "Firmware",
+                "nl": "Firmware"
+              },
+              "value": ""
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Polling Settings",
+            "nl": "Polling Instellingen"
+          },
+          "children": [
+            {
+              "id": "pollInterval",
+              "type": "number",
+              "label": {
+                "en": "Poll Interval (seconds)",
+                "nl": "Poll Interval (seconden)"
+              },
+              "hint": {
+                "en": "How often to check the mower status (15-60 seconds)",
+                "nl": "Hoe vaak de maaier status wordt gecontroleerd (15-60 seconden)"
+              },
+              "value": 30,
+              "min": 15,
+              "max": 60,
+              "units": {
+                "en": "seconds",
+                "nl": "seconden"
+              }
+            }
+          ]
+        }
+      ],
+      "id": "luba"
+    },
+    {
+      "name": {
+        "en": "Luba 2 AWD",
+        "nl": "Luba 2 AWD"
+      },
+      "class": "other",
+      "capabilities": [
+        "onoff",
+        "measure_battery",
+        "alarm_battery",
+        "mower_state",
+        "mower_activity"
+      ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      },
+      "platforms": [
+        "local",
+        "cloud"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
+      "images": {
+        "small": "/drivers/luba-2/assets/images/small.png",
+        "large": "/drivers/luba-2/assets/images/large.png"
+      },
+      "pair": [
+        {
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "title": {
+              "en": "Connect to Mammotion",
+              "nl": "Verbinden met Mammotion"
+            },
+            "usernameLabel": {
+              "en": "Email",
+              "nl": "E-mail"
+            },
+            "usernamePlaceholder": {
+              "en": "email@example.com",
+              "nl": "email@voorbeeld.nl"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            },
+            "passwordPlaceholder": {
+              "en": "Enter your password",
+              "nl": "Voer uw wachtwoord in"
+            }
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "title": {
+              "en": "Reconnect to Mammotion",
+              "nl": "Opnieuw verbinden met Mammotion"
+            },
+            "usernameLabel": {
+              "en": "Email",
+              "nl": "E-mail"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            }
+          }
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Device Information",
+            "nl": "Apparaat Informatie"
+          },
+          "children": [
+            {
+              "id": "model",
+              "type": "label",
+              "label": {
+                "en": "Model",
+                "nl": "Model"
+              },
+              "value": ""
+            },
+            {
+              "id": "firmware",
+              "type": "label",
+              "label": {
+                "en": "Firmware",
+                "nl": "Firmware"
+              },
+              "value": ""
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Polling Settings",
+            "nl": "Polling Instellingen"
+          },
+          "children": [
+            {
+              "id": "pollInterval",
+              "type": "number",
+              "label": {
+                "en": "Poll Interval (seconds)",
+                "nl": "Poll Interval (seconden)"
+              },
+              "hint": {
+                "en": "How often to check the mower status (15-60 seconds)",
+                "nl": "Hoe vaak de maaier status wordt gecontroleerd (15-60 seconden)"
+              },
+              "value": 30,
+              "min": 15,
+              "max": 60,
+              "units": {
+                "en": "seconds",
+                "nl": "seconden"
+              }
+            }
+          ]
+        }
+      ],
+      "id": "luba-2"
+    },
+    {
+      "name": {
+        "en": "Yuka",
+        "nl": "Yuka"
+      },
+      "class": "other",
+      "capabilities": [
+        "onoff",
+        "measure_battery",
+        "alarm_battery",
+        "mower_state",
+        "mower_activity"
+      ],
+      "energy": {
+        "batteries": [
+          "INTERNAL"
+        ]
+      },
+      "platforms": [
+        "local",
+        "cloud"
+      ],
+      "connectivity": [
+        "cloud"
+      ],
+      "images": {
+        "small": "/drivers/yuka/assets/images/small.png",
+        "large": "/drivers/yuka/assets/images/large.png"
+      },
+      "pair": [
+        {
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "title": {
+              "en": "Connect to Mammotion",
+              "nl": "Verbinden met Mammotion"
+            },
+            "usernameLabel": {
+              "en": "Email",
+              "nl": "E-mail"
+            },
+            "usernamePlaceholder": {
+              "en": "email@example.com",
+              "nl": "email@voorbeeld.nl"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            },
+            "passwordPlaceholder": {
+              "en": "Enter your password",
+              "nl": "Voer uw wachtwoord in"
+            }
+          }
+        },
+        {
+          "id": "list_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_devices"
+          }
+        },
+        {
+          "id": "add_devices",
+          "template": "add_devices"
+        }
+      ],
+      "repair": [
+        {
+          "id": "login_credentials",
+          "template": "login_credentials",
+          "options": {
+            "title": {
+              "en": "Reconnect to Mammotion",
+              "nl": "Opnieuw verbinden met Mammotion"
+            },
+            "usernameLabel": {
+              "en": "Email",
+              "nl": "E-mail"
+            },
+            "passwordLabel": {
+              "en": "Password",
+              "nl": "Wachtwoord"
+            }
+          }
+        }
+      ],
+      "settings": [
+        {
+          "type": "group",
+          "label": {
+            "en": "Device Information",
+            "nl": "Apparaat Informatie"
+          },
+          "children": [
+            {
+              "id": "model",
+              "type": "label",
+              "label": {
+                "en": "Model",
+                "nl": "Model"
+              },
+              "value": ""
+            },
+            {
+              "id": "firmware",
+              "type": "label",
+              "label": {
+                "en": "Firmware",
+                "nl": "Firmware"
+              },
+              "value": ""
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Polling Settings",
+            "nl": "Polling Instellingen"
+          },
+          "children": [
+            {
+              "id": "pollInterval",
+              "type": "number",
+              "label": {
+                "en": "Poll Interval (seconds)",
+                "nl": "Poll Interval (seconden)"
+              },
+              "hint": {
+                "en": "How often to check the mower status (15-60 seconds)",
+                "nl": "Hoe vaak de maaier status wordt gecontroleerd (15-60 seconden)"
+              },
+              "value": 30,
+              "min": 15,
+              "max": 60,
+              "units": {
+                "en": "seconds",
+                "nl": "seconden"
+              }
+            }
+          ]
+        }
+      ],
+      "id": "yuka"
+    }
+  ],
+  "capabilities": {
+    "mower_activity": {
+      "type": "string",
+      "title": {
+        "en": "Activity",
+        "nl": "Activiteit"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/mower_activity.svg"
+    },
+    "mower_state": {
+      "type": "enum",
+      "title": {
+        "en": "Mower State",
+        "nl": "Maaier Status"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/mower_state.svg",
+      "values": [
+        {
+          "id": "idle",
+          "title": {
+            "en": "Idle",
+            "nl": "Inactief"
+          }
+        },
+        {
+          "id": "mowing",
+          "title": {
+            "en": "Mowing",
+            "nl": "Aan het maaien"
+          }
+        },
+        {
+          "id": "charging",
+          "title": {
+            "en": "Charging",
+            "nl": "Aan het opladen"
+          }
+        },
+        {
+          "id": "returning",
+          "title": {
+            "en": "Returning",
+            "nl": "Terugkeren"
+          }
+        },
+        {
+          "id": "paused",
+          "title": {
+            "en": "Paused",
+            "nl": "Gepauzeerd"
+          }
+        },
+        {
+          "id": "error",
+          "title": {
+            "en": "Error",
+            "nl": "Fout"
+          }
+        },
+        {
+          "id": "offline",
+          "title": {
+            "en": "Offline",
+            "nl": "Offline"
+          }
+        }
+      ]
+    }
+  }
+}

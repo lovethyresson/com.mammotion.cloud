@@ -1,0 +1,22 @@
+{
+  "id": "start_mowing",
+  "title": {
+    "en": "Start mowing",
+    "nl": "Start maaien"
+  },
+  "titleFormatted": {
+    "en": "Start mowing with [[device]]",
+    "nl": "Start maaien met [[device]]"
+  },
+  "hint": {
+    "en": "Start a mowing session",
+    "nl": "Start een maaisessie"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=luba|luba-2|yuka"
+    }
+  ]
+}

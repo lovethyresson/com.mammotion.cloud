@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mammotion Settings</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      background-color: #f5f5f5;
+      color: #333;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #2e7d32;
+    }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+    }
+
+    .card h2 {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      color: #555;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+    }
+
+    .status-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .status-indicator.connected {
+      background-color: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    .status-indicator.disconnected {
+      background-color: #ffebee;
+      color: #c62828;
+    }
+
+    .status-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .connected .status-dot {
+      background-color: #4caf50;
+    }
+
+    .disconnected .status-dot {
+      background-color: #f44336;
+    }
+
+    .warning-box {
+      background-color: #fff3e0;
+      border-left: 4px solid #ff9800;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .warning-box h3 {
+      color: #e65100;
+      font-size: 1rem;
+      margin-bottom: 10px;
+    }
+
+    .warning-box p {
+      font-size: 0.9rem;
+      color: #5d4037;
+    }
+
+    .warning-box ol {
+      margin: 10px 0 0 20px;
+      font-size: 0.9rem;
+      color: #5d4037;
+    }
+
+    .warning-box li {
+      margin-bottom: 5px;
+    }
+
+    .device-list {
+      list-style: none;
+    }
+
+    .device-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .device-item:last-child {
+      border-bottom: none;
+    }
+
+    .device-name {
+      font-weight: 500;
+    }
+
+    .device-status {
+      font-size: 0.85rem;
+      padding: 4px 10px;
+      border-radius: 12px;
+    }
+
+    .device-status.online {
+      background-color: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    .device-status.offline {
+      background-color: #fafafa;
+      color: #9e9e9e;
+    }
+
+    .no-devices {
+      color: #9e9e9e;
+      font-style: italic;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      color: #9e9e9e;
+      font-size: 0.85rem;
+    }
+
+    .footer a {
+      color: #2e7d32;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Mammotion Settings</h1>
+
+    <div class="warning-box">
+      <h3>Important: Dual Account Required</h3>
+      <p>Mammotion Cloud only allows ONE active session per account. To use this app:</p>
+      <ol>
+        <li>Create a secondary Mammotion account</li>
+        <li>Share your mower to this secondary account from the main app</li>
+        <li>Use the secondary account credentials in Homey</li>
+      </ol>
+      <p style="margin-top: 10px;">Keep your primary account for the mobile app.</p>
+    </div>
+
+    <div class="card">
+      <h2>Connection Status</h2>
+      <div id="connection-status" class="status-indicator disconnected">
+        <span class="status-dot"></span>
+        <span id="status-text">Checking...</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>Linked Devices</h2>
+      <ul id="device-list" class="device-list">
+        <li class="no-devices">Loading devices...</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      <p>Mammotion Cloud Integration for Homey</p>
+      <p>Need help? Visit the <a href="https://community.homey.app" target="_blank">Homey Community</a></p>
+    </div>
+  </div>
+
+  <script>
+    function onHomeyReady(Homey) {
+      Homey.ready();
+
+      // Get connection status and devices from the app
+      Homey.get('connectionStatus', function(err, status) {
+        const statusEl = document.getElementById('connection-status');
+        const statusText = document.getElementById('status-text');
+
+        if (err || !status || !status.connected) {
+          statusEl.className = 'status-indicator disconnected';
+          statusText.textContent = 'Disconnected';
+        } else {
+          statusEl.className = 'status-indicator connected';
+          statusText.textContent = 'Connected';
+        }
+      });
+
+      Homey.get('devices', function(err, devices) {
+        const listEl = document.getElementById('device-list');
+
+        if (err || !devices || devices.length === 0) {
+          listEl.innerHTML = '<li class="no-devices">No devices linked. Add devices from the Homey app.</li>';
+          return;
+        }
+
+        listEl.innerHTML = devices.map(function(device) {
+          const statusClass = device.online ? 'online' : 'offline';
+          const statusText = device.online ? 'Online' : 'Offline';
+          return '<li class="device-item">' +
+            '<span class="device-name">' + escapeHtml(device.name) + '</span>' +
+            '<span class="device-status ' + statusClass + '">' + statusText + '</span>' +
+            '</li>';
+        }).join('');
+      });
+
+      function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+      }
+    }
+  </script>
+</body>
+</html>

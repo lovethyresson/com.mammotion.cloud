@@ -1,0 +1,33 @@
+{
+  "id": "battery_above",
+  "title": {
+    "en": "Battery is above",
+    "nl": "Batterij is boven"
+  },
+  "titleFormatted": {
+    "en": "Battery !{{is|is not}} above [[percentage]] percent",
+    "nl": "Batterij !{{is|is niet}} boven [[percentage]] procent"
+  },
+  "hint": {
+    "en": "Check if battery level is above threshold",
+    "nl": "Controleer of het batterijniveau boven de drempel is"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=luba|luba-2|yuka"
+    },
+    {
+      "type": "number",
+      "name": "percentage",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "placeholder": {
+        "en": "50",
+        "nl": "50"
+      }
+    }
+  ]
+}

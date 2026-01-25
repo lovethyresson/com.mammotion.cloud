@@ -1,0 +1,95 @@
+{
+  "pair": {
+    "login": {
+      "title": "Connect to Mammotion",
+      "error": "Login failed. Please check your credentials."
+    },
+    "list_devices": {
+      "title": "Select your mower"
+    },
+    "warning": {
+      "title": "Important: Dual Account Required",
+      "message": "Mammotion Cloud only allows ONE active session per account. To use this app, you must:\n\n1. Create a secondary Mammotion account\n2. Share your mower to this secondary account from the main app\n3. Use the secondary account credentials here\n\nKeep your primary account for the mobile app."
+    }
+  },
+  "device": {
+    "no_credentials": "No credentials stored. Please re-pair the device.",
+    "auth_failed": "Authentication failed. Please repair the device.",
+    "not_connected": "Not connected to Mammotion Cloud."
+  },
+  "state": {
+    "idle": "Idle",
+    "mowing": "Mowing",
+    "charging": "Charging",
+    "returning": "Returning to dock",
+    "paused": "Paused",
+    "error": "Error",
+    "offline": "Offline"
+  },
+  "settings": {
+    "title": "Mammotion Settings",
+    "polling": {
+      "title": "Polling Settings",
+      "interval": "Poll Interval",
+      "intervalHint": "How often to check mower status (in seconds)"
+    },
+    "connection": {
+      "title": "Connection Status",
+      "connected": "Connected",
+      "disconnected": "Disconnected"
+    },
+    "devices": {
+      "title": "Linked Devices"
+    }
+  },
+  "triggers": {
+    "mowing_started": {
+      "title": "Mowing started",
+      "hint": "When the mower starts a mowing session"
+    },
+    "mowing_finished": {
+      "title": "Mowing finished",
+      "hint": "When the mower finishes a mowing session"
+    },
+    "mower_docked": {
+      "title": "Mower docked",
+      "hint": "When the mower returns to the dock"
+    },
+    "mower_error": {
+      "title": "Mower error",
+      "hint": "When the mower reports an error"
+    },
+    "battery_low": {
+      "title": "Battery is low",
+      "hint": "When the mower battery drops below 20%"
+    }
+  },
+  "actions": {
+    "start_mowing": {
+      "title": "Start mowing",
+      "hint": "Start a mowing session"
+    },
+    "pause_mowing": {
+      "title": "Pause mowing",
+      "hint": "Pause the current mowing session"
+    },
+    "return_to_dock": {
+      "title": "Return to dock",
+      "hint": "Send the mower back to the charging dock"
+    }
+  },
+  "conditions": {
+    "is_mowing": {
+      "title": "Is mowing",
+      "hint": "Check if the mower is currently mowing"
+    },
+    "is_docked": {
+      "title": "Is docked",
+      "hint": "Check if the mower is at the dock"
+    },
+    "battery_above": {
+      "title": "Battery is above",
+      "hint": "Check if battery level is above threshold"
+    }
+  }
+}

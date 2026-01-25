@@ -1,0 +1,22 @@
+{
+  "id": "pause_mowing",
+  "title": {
+    "en": "Pause mowing",
+    "nl": "Pauzeer maaien"
+  },
+  "titleFormatted": {
+    "en": "Pause [[device]]",
+    "nl": "Pauzeer [[device]]"
+  },
+  "hint": {
+    "en": "Pause the current mowing session",
+    "nl": "Pauzeer de huidige maaisessie"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=luba|luba-2|yuka"
+    }
+  ]
+}

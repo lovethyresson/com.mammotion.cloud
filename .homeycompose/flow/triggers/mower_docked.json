@@ -1,0 +1,22 @@
+{
+  "id": "mower_docked",
+  "title": {
+    "en": "Mower docked",
+    "nl": "Maaier gedockt"
+  },
+  "titleFormatted": {
+    "en": "[[device]] docked",
+    "nl": "[[device]] gedockt"
+  },
+  "hint": {
+    "en": "When the mower returns to the dock",
+    "nl": "Wanneer de maaier terugkeert naar het dock"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=luba|luba-2|yuka"
+    }
+  ]
+}

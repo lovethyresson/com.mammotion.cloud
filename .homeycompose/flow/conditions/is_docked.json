@@ -1,0 +1,22 @@
+{
+  "id": "is_docked",
+  "title": {
+    "en": "Is docked",
+    "nl": "Is gedockt"
+  },
+  "titleFormatted": {
+    "en": "[[device]] !{{is|is not}} docked",
+    "nl": "[[device]] !{{is|is niet}} gedockt"
+  },
+  "hint": {
+    "en": "Check if the mower is at the dock",
+    "nl": "Controleer of de maaier bij het dock is"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=luba|luba-2|yuka"
+    }
+  ]
+}

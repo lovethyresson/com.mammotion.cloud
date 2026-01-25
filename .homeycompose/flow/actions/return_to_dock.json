@@ -1,0 +1,22 @@
+{
+  "id": "return_to_dock",
+  "title": {
+    "en": "Return to dock",
+    "nl": "Terug naar dock"
+  },
+  "titleFormatted": {
+    "en": "Send [[device]] back to dock",
+    "nl": "Stuur [[device]] terug naar dock"
+  },
+  "hint": {
+    "en": "Send the mower back to the charging dock",
+    "nl": "Stuur de maaier terug naar het oplaaddock"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=luba|luba-2|yuka"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "mower_error",
+  "title": {
+    "en": "Mower error",
+    "nl": "Maaier fout"
+  },
+  "titleFormatted": {
+    "en": "[[device]] has an error",
+    "nl": "[[device]] heeft een fout"
+  },
+  "hint": {
+    "en": "When the mower reports an error",
+    "nl": "Wanneer de maaier een fout meldt"
+  },
+  "args": [
+    {
+      "type": "device",
+      "name": "device",
+      "filter": "driver_id=luba|luba-2|yuka"
+    }
+  ]
+}

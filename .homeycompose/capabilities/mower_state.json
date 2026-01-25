@@ -1,0 +1,62 @@
+{
+  "type": "enum",
+  "title": {
+    "en": "Mower State",
+    "nl": "Maaier Status"
+  },
+  "getable": true,
+  "setable": false,
+  "uiComponent": "sensor",
+  "icon": "/assets/capabilities/mower_state.svg",
+  "values": [
+    {
+      "id": "idle",
+      "title": {
+        "en": "Idle",
+        "nl": "Inactief"
+      }
+    },
+    {
+      "id": "mowing",
+      "title": {
+        "en": "Mowing",
+        "nl": "Aan het maaien"
+      }
+    },
+    {
+      "id": "charging",
+      "title": {
+        "en": "Charging",
+        "nl": "Aan het opladen"
+      }
+    },
+    {
+      "id": "returning",
+      "title": {
+        "en": "Returning",
+        "nl": "Terugkeren"
+      }
+    },
+    {
+      "id": "paused",
+      "title": {
+        "en": "Paused",
+        "nl": "Gepauzeerd"
+      }
+    },
+    {
+      "id": "error",
+      "title": {
+        "en": "Error",
+        "nl": "Fout"
+      }
+    },
+    {
+      "id": "offline",
+      "title": {
+        "en": "Offline",
+        "nl": "Offline"
+      }
+    }
+  ]
+}
