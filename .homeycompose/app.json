@@ -8,12 +8,10 @@
     "cloud"
   ],
   "name": {
-    "en": "Mammotion",
-    "nl": "Mammotion"
+    "en": "Mammotion Robomowers"
   },
   "description": {
-    "en": "Control your Mammotion robot lawn mowers (Luba, Luba 2, Yuka) via the Mammotion Cloud.",
-    "nl": "Bedien uw Mammotion robotmaaiers (Luba, Luba 2, Yuka) via de Mammotion Cloud."
+    "en": "Control your Mammotion robot lawn mowers (Luba, Luba 2, Yuka) via the Mammotion Cloud."
   },
   "category": [
     "appliances"
@@ -28,5 +26,20 @@
     "name": "Love Thyresson",
     "email": "love@thyresson.se"
   },
-  "brandColor": "#4CAF50"
+  "brandColor": "#4CAF50",
+    "author": {
+    "name": "Love Thyresson",
+    "email": "love@thyresson.se"
+  },
+  "contributing": {
+    "donate": {
+      "paypal": {
+        "username": "lovethyresson"
+      }
+    }
+  },
+  "bugs": {
+    "url": "https://github.com/lovethyresson/com.mammotion.cloud/issues"
+  },
+  "source": "https://github.com/lovethyresson/com.mammotion.cloud"
 }
