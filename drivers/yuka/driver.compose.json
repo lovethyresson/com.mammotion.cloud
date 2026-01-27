@@ -14,7 +14,7 @@
   "energy": {
     "batteries": ["INTERNAL"]
   },
-  "platforms": ["local", "cloud"],
+  "platforms": ["local"],
   "connectivity": ["cloud"],
   "images": {
     "small": "{{driverAssetsPath}}/images/small.png",

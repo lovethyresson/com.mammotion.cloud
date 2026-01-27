@@ -5,8 +5,7 @@
   "compatibility": ">=5.0.0",
   "sdk": 3,
   "platforms": [
-    "local",
-    "cloud"
+    "local"
   ],
   "name": {
     "en": "Mammotion Robomowers"
@@ -320,8 +319,7 @@
         ]
       },
       "platforms": [
-        "local",
-        "cloud"
+        "local"
       ],
       "connectivity": [
         "cloud"
@@ -468,8 +466,7 @@
         ]
       },
       "platforms": [
-        "local",
-        "cloud"
+        "local"
       ],
       "connectivity": [
         "cloud"
@@ -616,8 +613,7 @@
         ]
       },
       "platforms": [
-        "local",
-        "cloud"
+        "local"
       ],
       "connectivity": [
         "cloud"
