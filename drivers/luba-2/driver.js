@@ -3,7 +3,7 @@
 const BaseDriver = require('../../lib/base-driver');
 
 /**
- * Driver for Mammotion Luba 2 AWD mowers
+ * Driver for Mammotion Luba 2 AWD and Luba Mini mowers
  */
 class Luba2Driver extends BaseDriver {
   /**
@@ -19,7 +19,7 @@ class Luba2Driver extends BaseDriver {
    * @returns {string}
    */
   getModelDisplayName() {
-    return 'Luba 2 AWD';
+    return 'Luba 2 / Luba Mini';
   }
 
   /**

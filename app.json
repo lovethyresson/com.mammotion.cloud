@@ -352,6 +352,7 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
+            "prev": "login_credentials",
             "next": "add_devices"
           }
         },
@@ -441,8 +442,8 @@
     },
     {
       "name": {
-        "en": "Luba 2 AWD",
-        "nl": "Luba 2 AWD"
+        "en": "Luba 2 / Luba Mini",
+        "nl": "Luba 2 / Luba Mini"
       },
       "class": "other",
       "capabilities": [
@@ -499,6 +500,7 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
+            "prev": "login_credentials",
             "next": "add_devices"
           }
         },
@@ -646,6 +648,7 @@
           "id": "list_devices",
           "template": "list_devices",
           "navigation": {
+            "prev": "login_credentials",
             "next": "add_devices"
           }
         },

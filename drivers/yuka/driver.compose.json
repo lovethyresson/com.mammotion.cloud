@@ -51,6 +51,7 @@
       "id": "list_devices",
       "template": "list_devices",
       "navigation": {
+        "prev": "login_credentials",
         "next": "add_devices"
       }
     },
